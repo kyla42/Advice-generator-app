@@ -1,0 +1,54 @@
+@use "util" as u;
+
+.container {
+    position: relative;
+    width: 54rem;
+    margin: auto;
+    background-color: u.$DarkGrayishBlue;
+    border-radius: 1.5rem;
+    @extend %fxcol-jcai-c;
+
+    @include u.bp(sm) {
+        width: calc(100vw - 8%);
+    }
+}
+
+.advice {
+    width: 82%;
+    color: u.$LightCyan;
+    text-align: center;
+}
+
+.line {  
+    width: 82%;
+    height: 1.6rem;
+    margin: 4rem 0 7rem 0;
+    background: url(../images/pattern-divider-desktop.svg) center center;
+    background-size: contain;
+
+    @include u.bp(sm) {
+        background: url(../images/pattern-divider-mobile.svg) center center;
+    }
+}
+
+.btn {
+    position: absolute;
+    bottom: -3.2rem;
+    width: 6.4rem;
+    height: 6.4rem;
+    background-color: u.$NeoGreen;
+    border-radius: 50%;
+    @extend %fx-jcai-c;
+    transition: all .25s ease-in-out;
+
+    &:hover {
+        box-shadow: 0 0 2.6rem 1rem hsla(150, 100%, 66%, 0.4);
+        transform: rotate(90deg);
+        transform-origin: center;     
+    }
+
+    &:active {
+        box-shadow: none;
+        transform: rotate(90deg) scale(0.9);
+    }
+}
